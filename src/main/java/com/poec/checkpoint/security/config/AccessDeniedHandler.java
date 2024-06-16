@@ -1,4 +1,4 @@
-package com.poec.projet_backend.config;
+package com.poec.checkpoint.security.config;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import jakarta.servlet.ServletException;

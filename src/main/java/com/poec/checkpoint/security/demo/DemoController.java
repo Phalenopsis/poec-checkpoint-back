@@ -1,4 +1,4 @@
-package com.poec.projet_backend.demo;
+package com.poec.checkpoint.security.demo;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;

@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.poec</groupId>
-	<artifactId>projet_backend</artifactId>
+	<artifactId>poec_checkpoint</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>projet_backend</name>
 	<description>Project template initialized with Spring Security.</description>

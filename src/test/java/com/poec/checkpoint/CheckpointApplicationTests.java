@@ -1,10 +1,10 @@
-package com.poec.projet_backend;
+package com.poec.checkpoint;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class ProjetBackendApplicationTests {
+class CheckpointApplicationTests {
 
 	@Test
 	void contextLoads() {

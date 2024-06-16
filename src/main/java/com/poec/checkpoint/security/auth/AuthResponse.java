@@ -1,4 +1,4 @@
-package com.poec.projet_backend.auth;
+package com.poec.checkpoint.security.auth;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

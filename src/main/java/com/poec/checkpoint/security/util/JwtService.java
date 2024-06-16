@@ -1,4 +1,4 @@
-package com.poec.projet_backend.util;
+package com.poec.checkpoint.security.util;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;

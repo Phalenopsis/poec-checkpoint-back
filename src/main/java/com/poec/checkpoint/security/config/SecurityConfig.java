@@ -1,7 +1,7 @@
-package com.poec.projet_backend.config;
+package com.poec.checkpoint.security.config;
 
-import com.poec.projet_backend.filter.JwtAuthenticationFilter;
-import com.poec.projet_backend.user_app.Role;
+import com.poec.checkpoint.security.filter.JwtAuthenticationFilter;
+import com.poec.checkpoint.security.user_app.Role;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

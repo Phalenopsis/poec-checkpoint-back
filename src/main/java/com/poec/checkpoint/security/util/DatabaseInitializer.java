@@ -1,8 +1,8 @@
-package com.poec.projet_backend.util;
+package com.poec.checkpoint.security.util;
 
-import com.poec.projet_backend.user_app.Role;
-import com.poec.projet_backend.user_app.UserApp;
-import com.poec.projet_backend.user_app.UserAppRepository;
+import com.poec.checkpoint.security.user_app.Role;
+import com.poec.checkpoint.security.user_app.UserApp;
+import com.poec.checkpoint.security.user_app.UserAppRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.security.crypto.password.PasswordEncoder;

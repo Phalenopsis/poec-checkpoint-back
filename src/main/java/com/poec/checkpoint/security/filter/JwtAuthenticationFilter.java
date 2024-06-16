@@ -1,6 +1,6 @@
-package com.poec.projet_backend.filter;
+package com.poec.checkpoint.security.filter;
 
-import com.poec.projet_backend.util.JwtService;
+import com.poec.checkpoint.security.util.JwtService;
 import io.jsonwebtoken.ExpiredJwtException;
 import io.jsonwebtoken.MalformedJwtException;
 import jakarta.servlet.FilterChain;

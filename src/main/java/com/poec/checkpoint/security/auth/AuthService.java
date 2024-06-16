@@ -1,10 +1,10 @@
-package com.poec.projet_backend.auth;
+package com.poec.checkpoint.security.auth;
 
-import com.poec.projet_backend.exceptions.UsernameAlreadyTakenException;
-import com.poec.projet_backend.user_app.Role;
-import com.poec.projet_backend.user_app.UserApp;
-import com.poec.projet_backend.user_app.UserAppRepository;
-import com.poec.projet_backend.util.JwtService;
+import com.poec.checkpoint.security.exceptions.UsernameAlreadyTakenException;
+import com.poec.checkpoint.security.user_app.Role;
+import com.poec.checkpoint.security.user_app.UserApp;
+import com.poec.checkpoint.security.user_app.UserAppRepository;
+import com.poec.checkpoint.security.util.JwtService;
 import jakarta.servlet.http.HttpServletRequest;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.authentication.AuthenticationManager;

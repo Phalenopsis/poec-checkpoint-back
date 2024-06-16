@@ -1,4 +1,4 @@
-package com.poec.projet_backend.user_app;
+package com.poec.checkpoint.security.user_app;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;

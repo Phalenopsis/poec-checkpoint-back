@@ -1,4 +1,4 @@
-package com.poec.projet_backend.auth;
+package com.poec.checkpoint.security.auth;
 
 import jakarta.servlet.http.HttpServletRequest;
 import lombok.RequiredArgsConstructor;
