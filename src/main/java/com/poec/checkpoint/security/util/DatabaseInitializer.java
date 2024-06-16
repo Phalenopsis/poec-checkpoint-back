@@ -25,8 +25,7 @@ public class DatabaseInitializer implements CommandLineRunner {
 
     private void createAdmin() {
         UserApp admin = UserApp.builder()
-                .firstname("admin")
-                .lastname("admin")
+                .name("admin")
                 .email("admin@admin.com")
                 .password(passwordEncoder.encode("admin"))
                 .role("ROLE_" + Role.ADMIN)
@@ -37,8 +36,7 @@ public class DatabaseInitializer implements CommandLineRunner {
 
     private void createUsers() {
         UserApp user1 = UserApp.builder()
-                .firstname("user1")
-                .lastname("user1")
+                .name("user1")
                 .email("user1@user1.com")
                 .password(passwordEncoder.encode("user1"))
                 .role("ROLE_" + Role.USER)

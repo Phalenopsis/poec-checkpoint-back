@@ -24,8 +24,7 @@ public class UserApp implements UserDetails {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String firstname;
-    private String lastname;
+    private String name;
     private String email;
     @JsonIgnore
     private String password;
