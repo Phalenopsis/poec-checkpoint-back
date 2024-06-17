@@ -7,6 +7,7 @@ import lombok.Setter;
 @Getter
 public class Player {
     private int color;
+    private Player adversary;
 
     Player() {
         this.color = 0;
