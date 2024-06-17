@@ -1,6 +1,7 @@
 package com.poec.checkpoint.security.user_app;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.poec.checkpoint.domaine.game.Game;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -30,6 +31,10 @@ public class UserApp implements UserDetails {
     private String password;
 
     private String role;
+
+    @OneToMany(cascade = CascadeType.ALL)
+    private List<Game> gameList;
+
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
