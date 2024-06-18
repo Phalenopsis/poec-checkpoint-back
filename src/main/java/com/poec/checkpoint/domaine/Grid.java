@@ -147,12 +147,11 @@ public class Grid {
        return new Position(position.getX() - 1, position.getY() + 1);
     }
 
-    public void playIa(String difficulty) {
+    public int playIa(String difficulty) {
        char iaColor = 2;
        switch (difficulty) {
            case "easy":
-               move(new Random().nextInt(width), iaColor);
-               break;
+               return move(new Random().nextInt(width), iaColor);
            default:
                throw new RuntimeException("not yet implemented");
 

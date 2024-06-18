@@ -29,7 +29,7 @@ public class GameService {
         game.setIsFinish(grid.move(move.column(), game.getHumanPlayerColor()));
         if(game.getIsFinish() == 0) {
             System.err.println("IA play");
-            grid.playIa(game.getDifficulty());
+            game.setIsFinish(grid.playIa(game.getDifficulty()));
         }
         System.err.println(grid);
 
