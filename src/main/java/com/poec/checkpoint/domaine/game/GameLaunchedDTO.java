@@ -5,7 +5,8 @@ public record GameLaunchedDTO(
         Long playerId,
         String difficulty,
         String grid,
-        int humanPlayerColor
+        int humanPlayerColor,
+        int isFinished
 ) {
     public static GameLaunchedDTO mapFromEntity(Game game) {
         return new GameLaunchedDTO(
@@ -13,7 +14,8 @@ public record GameLaunchedDTO(
                 game.getUser().getId(),
                 game.getDifficulty(),
                 game.getGrid(),
-                game.getHumanPlayerColor()
+                game.getHumanPlayerColor(),
+                game.getIsFinish()
         );
     }
 }

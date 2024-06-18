@@ -32,7 +32,7 @@ public class UserApp implements UserDetails {
 
     private String role;
 
-    @OneToMany(cascade = CascadeType.ALL)
+    @OneToMany
     private List<Game> gameList;
 
 

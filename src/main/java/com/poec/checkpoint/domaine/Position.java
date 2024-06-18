@@ -13,4 +13,12 @@ public class Position {
     public boolean isValid(Grid grid) {
         return (x >= 0 && x < grid.getWidth() && y >= 0 && y < grid.getHeight());
     }
+
+    @Override
+    public String toString() {
+        return "Position{" +
+                "x=" + x +
+                ", y=" + y +
+                '}';
+    }
 }

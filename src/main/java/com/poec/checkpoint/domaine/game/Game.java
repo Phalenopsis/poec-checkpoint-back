@@ -29,6 +29,8 @@ public class Game {
 
     private int humanPlayerColor;
 
+    private int isFinish = 0;
+
     public Game(String difficulty, UserApp user, int humanPlayerColor) {
         this.difficulty = difficulty;
         this.user = user;
