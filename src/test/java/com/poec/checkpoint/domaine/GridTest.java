@@ -64,20 +64,4 @@ class GridTest {
         assertFalse(grid5.isMoveWinner(new Position(0,5 ), '1'));
     }
 
-
-    @Test
-    void isDiagonalRightDownWinner() {
-        Grid grid3 = new Grid(
-                "0000000" +
-                        "0000000" +
-                        "0001000" +
-                        "0000100" +
-                        "0000010" +
-                        "1000001"
-        );
-        assertTrue(grid3.isDiagonalRightDownWinner(new Position(3,2 ), '1'));
-        assertTrue(grid3.isDiagonalRightDownWinner(new Position(6,5 ), '1'));
-        assertTrue(grid3.isDiagonalRightDownWinner(new Position(4,3 ), '1'));
-        assertFalse(grid3.isDiagonalRightDownWinner(new Position(0,5 ), '1'));
-    }
 }

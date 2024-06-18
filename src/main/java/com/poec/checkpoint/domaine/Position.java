@@ -21,4 +21,20 @@ public class Position {
                 ", y=" + y +
                 '}';
     }
+
+    public Position getNextDiagonalyRightDownPosition() {
+        return new Position(getX() - 1, getY() - 1);
+    }
+
+    public Position getNextDiagonalyRightUpPosition() {
+        return new Position(getX() + 1, getY() + 1);
+    }
+
+    public Position getNextDiagonalyLeftDownPosition() {
+        return new Position(getX() + 1, getY() - 1);
+    }
+
+    public Position getNextDiagonalyLeftUpPosition() {
+        return new Position(getX() - 1, getY() + 1);
+    }
 }
