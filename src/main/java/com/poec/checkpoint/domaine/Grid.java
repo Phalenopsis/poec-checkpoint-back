@@ -5,6 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 
 import java.util.Arrays;
+import java.util.Random;
 
 @AllArgsConstructor
 public class Grid {
@@ -144,5 +145,17 @@ public class Grid {
 
     private Position getNextDiagonalyLeftUpPosition(Position position) {
        return new Position(position.getX() - 1, position.getY() + 1);
+    }
+
+    public void playIa(String difficulty) {
+       char iaColor = 2;
+       switch (difficulty) {
+           case "easy":
+               move(new Random().nextInt(width), iaColor);
+               break;
+           default:
+               throw new RuntimeException("not yet implemented");
+
+       }
     }
 }

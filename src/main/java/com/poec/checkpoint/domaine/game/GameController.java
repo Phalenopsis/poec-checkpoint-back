@@ -37,19 +37,7 @@ public class GameController {
 
     @PatchMapping("/play")
     public ResponseEntity<GameLaunchedDTO> play(@RequestBody MoveDTO move) {
-        Game game = gameService.getById(move.tableId());
-        Grid grid = new Grid(game.getGrid());
-
-        game.setIsFinish(grid.move(move.column(), game.getHumanPlayerColor()));
-        if (game.getIsFinish() == 0) {
-
-        }
-
-        String gridInString = grid.toString();
-        game.setGrid(gridInString);
-
-
-        Game gameSaved = gameService.update(game);
+        Game gameSaved = gameService.update(move);
         return new ResponseEntity<>(GameLaunchedDTO.mapFromEntity(gameSaved), HttpStatus.OK);
     }
 }
