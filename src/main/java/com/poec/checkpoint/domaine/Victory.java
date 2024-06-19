@@ -39,7 +39,7 @@ public class Victory {
         }
         i = 1;
 
-        while(x + i < grid.getWidth() && grid.getGrid()[position.getY()][x + i] == color) {
+        while(x + i < grid.getWIDTH() && grid.getGrid()[position.getY()][x + i] == color) {
             i += 1;
             numberOfToken += 1;
         }

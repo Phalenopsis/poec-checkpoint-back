@@ -11,7 +11,7 @@ public class Position {
     private int y;
 
     public boolean isValid(Grid grid) {
-        return (x >= 0 && x < grid.getWidth() && y >= 0 && y < grid.getHeight());
+        return (x >= 0 && x < grid.getWIDTH() && y >= 0 && y < grid.getHEIGHT());
     }
 
     @Override
