@@ -23,7 +23,6 @@ public class GameController {
 
     @PostMapping("/new")
     public ResponseEntity<GameLaunchedDTO> add(@RequestBody StartingGameDTO startingGameDTO) {
-        System.err.println("hello world !");
         UserApp foundUser = userService.getById(startingGameDTO.playerId());
         Game game = new Game(
                 startingGameDTO.difficulty(),
@@ -41,13 +40,4 @@ public class GameController {
         return new ResponseEntity<>(GameLaunchedDTO.mapFromEntity(gameSaved), HttpStatus.OK);
     }
 }
-/*
- @PostMapping("/add/{userId}")
-    public ResponseEntity<GameTableDTO> add(@RequestBody GameTable gameTable, @PathVariable("userId") Long userId) {
-        UserApp foundUser = userAppService.getById(userId);
-        gameTable.setUser(foundUser);
-        GameTable tableCreated = service.add(gameTable);
-        GameTableDTO dto = GameTableDTO.mapFromEntity(tableCreated);
-        return new ResponseEntity<>(dto, HttpStatus.OK);
-    }
- */
+

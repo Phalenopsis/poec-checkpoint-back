@@ -17,6 +17,7 @@ public class Grid {
 
     private int SIZE_TO_WIN = 4;
 
+    @Getter
     private List<Integer> possibleMoves = new ArrayList<>();
 
     @Getter
@@ -28,30 +29,44 @@ public class Grid {
 
            for(int j = 0; j < WIDTH; j++) {
                grid[i][j] = subString.charAt(j);
-               if (j == 0 && grid[i][j] == '0') possibleMoves.add(i);
+               if (i == 0 && grid[i][j] == '0') possibleMoves.add(j);
            }
        }
    }
 
-   char getColorAtPosition(Position position) {
+
+   public char getColorAtPosition(Position position) {
        if(position.isValid(this)) return grid[position.getY()][position.getX()];
        throw new PositionOutOfGridException("Position : " + position + " is not valid");
    }
 
+   private void setColorAtPosition(Position position, char color) {
+       grid[position.getY()][position.getX()] = color;
+   }
+
    public int move(int column, int color) {
        char charColor = (char)(color + '0');
+       Position nextMove = findEmptyCaseInColumn(column);
+       setColorAtPosition(nextMove, charColor);
+       return getResultOfMove(color, nextMove, charColor);
+
+   }
+
+    private int getResultOfMove(int color, Position movePlayed, char charColor) {
+        if(isMoveWinner(movePlayed, charColor)) return color;
+        if(movePlayed.getY() == 0) possibleMoves.remove(movePlayed.getX());
+        if(possibleMoves.isEmpty()) return -1;
+        return 0;
+    }
+
+    public Position findEmptyCaseInColumn(int column) {
        for(int i = HEIGHT - 1; i >= 0; i -= 1) {
-           if(grid[i][column] == '0') {
-               grid[i][column] = charColor;
-               Position lastMove = new Position(column, i);
-               //vérifier si le coup est gagnant
-               if(isMoveWinner(lastMove, charColor)) return color;
-               if(i == 0) possibleMoves.remove((Integer) column);
-               if(possibleMoves.isEmpty()) return -1;
-               return 0;
+           Position position = new Position(column, i);
+           if(getColorAtPosition(position) == '0') {
+               return position;
            }
        }
-       return 0;
+       throw new RuntimeException("No empty case in column");
    }
 
     @Override
@@ -69,17 +84,25 @@ public class Grid {
     }
 
     public int playIa(String difficulty) {
-       char iaColor = 2;
+       int iaColor = 2;
        switch (difficulty) {
            case "easy":
                return playIaEasy(iaColor);
+           case "medium":
+               return playIaMedium(iaColor);
            default:
                throw new RuntimeException("not yet implemented");
        }
     }
 
-    public int playIaEasy(char iaColor) {
+    public int playIaEasy(int iaColor) {
        int column = possibleMoves.get(new Random().nextInt(possibleMoves.size()));
        return move(column, iaColor);
+    }
+
+    public int playIaMedium(int iaColor) {
+       IaHeuristic iaHeuristic = new IaHeuristic(this);
+       Position positionToPlay =  iaHeuristic.chooseMove();
+       return move(positionToPlay.getX(), iaColor);
     }
 }

@@ -10,7 +10,7 @@ class GridTest {
     void move() {
         Grid grid = new Grid("0000000" + "0000000" + "0000000" + "0000000" + "0000000" + "0000000");
         grid.move(6, 1);
-        assertEquals(grid.toString(), "0000000" + "0000000" + "0000000" + "0000000" + "0000000" + "0000001");
+        assertEquals("0000000" + "0000000" + "0000000" + "0000000" + "0000000" + "0000001", grid.toString());
     }
 
     @Test
@@ -62,6 +62,19 @@ class GridTest {
                         "1000001"
         );
         assertFalse(grid5.isMoveWinner(new Position(0,5 ), '1'));
+    }
+
+    @Test
+    void testPossibleMoves() {
+        Grid grid = new Grid(
+                "0000000" +
+                        "0000000" +
+                        "0000000" +
+                        "0000000" +
+                        "0000000" +
+                        "1000001"
+        );
+        assertEquals(7, grid.getPossibleMoves().size());
     }
 
 }

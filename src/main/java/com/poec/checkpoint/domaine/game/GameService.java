@@ -28,12 +28,8 @@ public class GameService {
 
         game.setIsFinish(grid.move(move.column(), game.getHumanPlayerColor()));
         if(game.getIsFinish() == 0) {
-            System.err.println("IA play");
             game.setIsFinish(grid.playIa(game.getDifficulty()));
         }
-        System.err.println(grid);
-
-
         String gridInString = grid.toString();
         game.setGrid(gridInString);
 

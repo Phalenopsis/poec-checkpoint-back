@@ -7,6 +7,15 @@ public class Victory {
         this.grid = grid;
     }
 
+    public int getScoreForMove(Position position, char color) {
+        int score = 0;
+        score = Math.max(isVerticalWinner(position, color), score);
+        score = Math.max(isHorizontalWinner(position, color), score);
+        score = Math.max(isDiagonalLeftWinner(position, color), score);
+        score = Math.max(isDiagonalRightDownWinner(position, color), score);
+        return (int) Math.pow(10, score - 1);
+    }
+
     public boolean isMoveWinner(Position position, char color) {
         if(isVerticalWinner(position, color) >= 4 ) return true;
         if(isHorizontalWinner(position, color) >= 4) return true;
