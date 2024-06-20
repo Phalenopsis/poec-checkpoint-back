@@ -37,15 +37,20 @@ public class IaHeuristic {
             if(scoreBlocked == 1000) {
                 return Collections.singletonList(positionTested);
             }
-            if(scoreTested > score) {
-                optimizedMoves.clear();
-                optimizedMoves.add(positionTested);
-                score = scoreTested;
-            } else if (scoreTested == score) {
-                optimizedMoves.add(positionTested);
-            }
+            score = getScore(scoreTested, score, optimizedMoves, positionTested);
         }
         return optimizedMoves;
+    }
+
+    private static int getScore(int scoreTested, int score, List<Position> optimizedMoves, Position positionTested) {
+        if(scoreTested > score) {
+            optimizedMoves.clear();
+            optimizedMoves.add(positionTested);
+            score = scoreTested;
+        } else if (scoreTested == score) {
+            optimizedMoves.add(positionTested);
+        }
+        return score;
     }
 
 
